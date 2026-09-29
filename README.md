@@ -24,7 +24,7 @@ bundle exec jekyll serve
 ## `blog.choies.kr` 연결
 
 1. 저장소 **Settings → Pages → Custom domain**에 `blog.choies.kr`를 등록합니다.
-2. DNS 제공업체에서 `blog`의 CNAME 레코드를 `choieunsu2009.github.io`로 지정합니다.
+2. Cloudflare DNS에서 `blog`의 CNAME 레코드를 `choieunsu2009.github.io`로 지정하고 **Proxy status**를 **DNS only**로 설정합니다.
 3. GitHub Pages에서 DNS 확인과 인증서 발급이 끝나면 **Enforce HTTPS**를 켭니다.
 
 이 저장소의 배포 방식은 GitHub Actions입니다. GitHub Pages의 사용자 지정 도메인은 위 Pages 설정에서 등록해야 합니다. `_config.yml`의 `url`은 사이트가 생성하는 링크와 메타데이터에 쓰입니다.
