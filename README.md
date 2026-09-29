@@ -1,39 +1,34 @@
-# Chirpy Starter
+# Choies Blog
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+[Chirpy Starter](https://github.com/cotes2020/chirpy-starter)를 바탕으로 만든 Jekyll 블로그입니다.
 
-A minimal, ready-to-use template for creating a blog with the [**Chirpy**][chirpy] Jekyll theme. Get up and running in minutes with all critical files pre-configured.
+- 예정 주소: `https://blog.choies.kr`
+- GitHub 저장소: `https://github.com/choieunsu2009/choieunsu2009.github.io`
+- 글 위치: `_posts/YYYY-MM-DD-title.md`
 
-## Why This Starter Exists
+## 로컬 실행
 
-When installing Chirpy through [RubyGems.org][gem], Jekyll can only read a subset of theme files (`_data`, `_layouts`, `_includes`, `_sass`, `assets`) and limited `_config.yml` options from the gem. As a result, users cannot enjoy the full out-of-the-box experience that Chirpy offers.
+Ruby 3.4와 Bundler를 설치한 뒤 다음 명령을 실행합니다.
 
-To unlock all features, the following files must be present in your Jekyll site:
-
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+```sh
+bundle install
+bundle exec jekyll serve
 ```
 
-This starter bundles those files from the latest **Chirpy** release along with a [CD][CD] workflow, so you can start writing immediately.
+사이트는 `http://127.0.0.1:4000`에서 확인할 수 있습니다.
 
-## Usage
+## GitHub Pages 배포
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+`main` 브랜치에 푸시하면 `.github/workflows/pages-deploy.yml`이 사이트를 빌드하고 배포합니다. GitHub 저장소의 **Settings → Pages → Build and deployment → Source**를 **GitHub Actions**로 설정해야 합니다.
 
-## Contributing
+## `blog.choies.kr` 연결
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+1. 저장소 **Settings → Pages → Custom domain**에 `blog.choies.kr`를 등록합니다.
+2. DNS 제공업체에서 `blog`의 CNAME 레코드를 `choieunsu2009.github.io`로 지정합니다.
+3. GitHub Pages에서 DNS 확인과 인증서 발급이 끝나면 **Enforce HTTPS**를 켭니다.
 
-## License
+이 저장소의 배포 방식은 GitHub Actions입니다. GitHub Pages의 사용자 지정 도메인은 위 Pages 설정에서 등록해야 합니다. `_config.yml`의 `url`은 사이트가 생성하는 링크와 메타데이터에 쓰입니다.
 
-This work is published under [MIT][mit] License.
+## 출처
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+Chirpy Starter의 [MIT 라이선스](LICENSE)를 따릅니다.
