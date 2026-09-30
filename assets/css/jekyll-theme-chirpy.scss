@@ -3,8 +3,8 @@
 
 @use 'abstracts/variables' with (
   $theme: '{{ site.theme_mode }}',
-  $font-family-base: 'Pretendard Variable', sans-serif,
-  $font-family-heading: 'Pretendard Variable', sans-serif
+  $font-family-base: ('Pretendard Variable', sans-serif),
+  $font-family-heading: ('Pretendard Variable', sans-serif)
 );
 
 /* prettier-ignore */
