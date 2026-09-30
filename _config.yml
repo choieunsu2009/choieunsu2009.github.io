@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: 최은수
 
-tagline: 기록과 생각
+tagline: Choi Eunsu
 
 description: >- # used by seo meta and the atom feed
   항상 “왜?” 를 묻는 백엔드 개발자
@@ -88,7 +88,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: light
+theme_mode: # light
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
