@@ -111,13 +111,32 @@
   <!-- Scripts -->
 
   <script>
-    // Start new visitors in light mode while keeping Chirpy's theme switcher.
-    if (!localStorage.getItem('theme-initialized')) {
-      if (!localStorage.getItem('theme')) {
-        localStorage.setItem('theme', 'light');
+    // Restore the choice before Chirpy initializes the theme on every page.
+    (() => {
+      const cookieName = 'blog-theme';
+      const cookie = document.cookie.split('; ').find((entry) => entry.startsWith(`${cookieName}=`));
+      const savedMode = cookie && cookie.split('=')[1];
+      const storedMode = localStorage.getItem('theme');
+      const mode = ['light', 'dark', 'system'].includes(savedMode)
+        ? savedMode
+        : ['light', 'dark'].includes(storedMode) ? storedMode : 'light';
+
+      if (mode === 'system') {
+        localStorage.removeItem('theme');
+      } else {
+        localStorage.setItem('theme', mode);
       }
-      localStorage.setItem('theme-initialized', '1');
-    }
+
+      const saveMode = (value) => {
+        document.cookie = `${cookieName}=${value}; Path=/; Max-Age=31536000; SameSite=Lax; Secure`;
+      };
+
+      saveMode(mode);
+      document.addEventListener('click', (event) => {
+        const option = event.target.closest('#mode-toggle + .dropdown-menu .dropdown-item[data-theme-mode]');
+        if (option) saveMode(option.dataset.themeMode);
+      });
+    })();
   </script>
 
   <script src="{{ '/assets/js/dist/theme.min.js' | relative_url }}"></script>
