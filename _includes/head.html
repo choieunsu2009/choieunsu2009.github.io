@@ -71,6 +71,10 @@
   {% include_cached favicons.html %}
 
   <!-- Resource Hints -->
+  {% if page.layout == 'post' and page.comments and site.comments.provider == 'giscus' %}
+    <link rel="preconnect" href="https://giscus.app" crossorigin>
+  {% endif %}
+
   {% unless site.assets.self_host.enabled %}
     {% for hint in site.data.origin.cors.resource_hints %}
       {% for link in hint.links %}
