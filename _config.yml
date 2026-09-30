@@ -40,6 +40,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/choieunsu2009
+    - https://choies.kr
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -134,7 +135,7 @@ comments:
     category: Announcements
     category_id: DIC_kwDOU0Aiic4DGsJh
     mapping: pathname
-    strict: '1'
+    strict: "1"
     input_position: # optional, default to 'bottom'
     lang: ko
     reactions_enabled: # optional, default to the value of `1`
